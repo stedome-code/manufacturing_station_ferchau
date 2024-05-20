@@ -1,3 +1,5 @@
+package com.ferchau.simulator;
+
 public class Machine {
     private int id;
     private boolean isOccupied;

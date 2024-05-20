@@ -1,3 +1,5 @@
+package com.ferchau.simulator;
+
 public class ManufacturingStation implements PlaceSensorInterface {
     private final int NUMBER_MACHINES;
     private final int PRODUCTION_TIME;

@@ -1,4 +1,5 @@
-import java.util.ResourceBundle.Control;
+package com.ferchau.simulator;
+
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 

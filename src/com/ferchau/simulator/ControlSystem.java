@@ -1,17 +1,15 @@
+package com.ferchau.simulator;
+
 public class ControlSystem {
     private boolean emptyPlaceSensor = false;
     private boolean fullPlaceSensor = false;
     private PlaceSensorInterface placeSensorInterface;
 
-    public PlaceSensorInterface getPlaceSensorInterface() {
-        return placeSensorInterface;
-    }
-
-    public synchronized void setPlaceSensorInterface(PlaceSensorInterface placeSensorInterface) {
+    public void setPlaceSensorInterface(PlaceSensorInterface placeSensorInterface) {
         this.placeSensorInterface = placeSensorInterface;
     }
 
-    public boolean isEmptyPlaceSensor() {
+    public synchronized boolean isEmptyPlaceSensor() {
         return emptyPlaceSensor;
     }
 
@@ -19,16 +17,12 @@ public class ControlSystem {
         this.emptyPlaceSensor = emptyPlaceSensor;
         placeSensorInterface.onEmptyPlaceSensorChanged();
     }
-    
-    public void updateEmptySensor() {
-        placeSensorInterface.onEmptyPlaceSensorChanged();
-    }
 
-    public boolean isFullPlaceSensor() {
+    public synchronized boolean isFullPlaceSensor() {
         return fullPlaceSensor;
     }
 
-    public void setFullPlaceSensor(boolean fullPlaceSensor) {
+    public synchronized void setFullPlaceSensor(boolean fullPlaceSensor) {
             this.fullPlaceSensor = fullPlaceSensor;
             placeSensorInterface.onFullPlaceSensorChanged();
     }
